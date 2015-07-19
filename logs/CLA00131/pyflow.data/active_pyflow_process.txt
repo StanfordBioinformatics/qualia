@@ -1,0 +1,20 @@
+
+This file provides details of the pyflow instance currently using this data directory.
+During normal pyflow run termination (due to job completion, error, SIGINT, etc...),
+this file should be deleted. If this file is present it should mean either:
+(1) the data directory is still in use by a running workflow
+(2) a sudden job failure occured that prevented normal run termination
+
+The associated pyflow job details are as follows:
+
+pyFlowClientWorkflowClass:	TransferWorkflow
+pyFlowVersion:	1.1.3
+pythonVersion:	2.7.6.final.0
+Runid:	24136_0
+RunStartTime:	2015-07-19T21:16:19.598808 UTC
+NotificationTime:	2015-07-19T21:16:19.600139 UTC
+HostName:	dn52es6g.sunet
+WorkingDir:	/Users/gmcinnes/src/ClaritasExomeAnalysis/logs/CLA00131
+DataDir:	/Users/gmcinnes/src/ClaritasExomeAnalysis/logs/CLA00131/pyflow.data
+ProcessCmdLine:	'transfer_from_drive.py --search'
+

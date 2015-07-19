@@ -1,0 +1,4 @@
+[2015-07-19T21:16:19.692288] [dn52es6g.sunet] [24136_1] [pyflowTaskWrapper:copy_Manifest_csv] [wrapperSignal] wrapperStart
+[2015-07-19T21:16:19.694697] [dn52es6g.sunet] [24136_1] [pyflowTaskWrapper:copy_Manifest_csv] [wrapperSignal] taskStart
+[2015-07-19T21:16:19.915022] [dn52es6g.sunet] [24136_1] [pyflowTaskWrapper:copy_Manifest_csv] [wrapperSignal] taskExitCode 0
+[2015-07-19T21:16:19.915478] [dn52es6g.sunet] [24136_1] [pyflowTaskWrapper:copy_Manifest_csv] [wrapperSignal] taskElapsedSec 0
