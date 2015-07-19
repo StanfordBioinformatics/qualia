@@ -1,2 +1,0 @@
-[2015-07-19T21:16:20.045888] [dn52es6g.sunet] [24136_1] [pyflowTaskWrapper:copy_SHIP2022990_tar] [wrapperSignal] wrapperStart
-[2015-07-19T21:16:20.048810] [dn52es6g.sunet] [24136_1] [pyflowTaskWrapper:copy_SHIP2022990_tar] [wrapperSignal] taskStart
