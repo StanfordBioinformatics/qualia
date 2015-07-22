@@ -9,16 +9,18 @@ import logging
 import subprocess
 
 def checksum(md5sum, file):
+    setup_logging()
     if not os.path.exists(file):
         print "File not found! %s" % file
+        logging.info("md5sum check FAIL: %file - file not found")
         exit(1)
-    setup_logging()
+
     hash = get_md5sum(file)
     if not hash == md5sum:
-        print "md5sum check failed: %s" % file
-        logging.info("md5sum check FAILED: %s" % file)
+        print "md5sum check failed: %s actual: %s reported: %s" % (file, hash, md5sum)
+        logging.info("md5sum check FAILED: %s actual: %s reported: %s" % (file, hash, md5sum))
         exit(0)
-    logging.info("md5sum check PASS: %s" % file)
+    logging.info("md5sum check PASS: %s actual: %s reported: %s" % (file, hash, md5sum))
 
 def get_md5sum(file):
     cmd = ['md5sum', file]

@@ -30,3 +30,8 @@ Any failures will be reported to the terminal.  You can also check the logs for 
 ```
 grep FAILED checksum.log
 ```
+
+This job can be run on the computing cluster like this:
+```
+qs -N "md5sum-check" -pe shm 8 "module load python/2.7; python /home/gmcinnes/src/ClaritasExomeAnalysis/bin/unpack_and_check.py"
+```

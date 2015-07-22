@@ -21,7 +21,7 @@ def unpack_and_check(no_unpack, no_check):
     setup_logging()
     # Unpack tar files
     workflow = TransferWorkflow(manifest, no_unpack, no_check)
-    response = workflow.run(mode="local", nCores=2)
+    response = workflow.run(mode="local", nCores=8)
     if not response == 0:
         print "FAILED!"
         logging.error("Workflow failed!")
