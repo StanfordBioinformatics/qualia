@@ -35,3 +35,11 @@ This job can be run on the computing cluster like this:
 ```
 qs -N "md5sum-check" -pe shm 8 "module load python/2.7; python /home/gmcinnes/src/ClaritasExomeAnalysis/bin/unpack_and_check.py"
 ```
+
+## Upload to Google Cloud
+
+Create bucket 
+```
+gsutil mb -c DRA -l US -p gbsc-gcp-project-mvp gs://gbsc-gcp-project-mvp-claritas
+```
+
