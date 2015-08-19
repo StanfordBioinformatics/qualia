@@ -59,7 +59,7 @@ print(paste("FastQC Directory: ", fastqc_output, sep=""))
 
 ## Start script
 require(ggplot2)
-source("~/src/qualia/data/fastqc_helper.R")
+source("~/src/qualia/bin/fastqc_helper.R")
 
 # Build reference
 reference_filename = '~/src/qualia/data/IonTorrent_NA12878_V3.fastqc_data.txt'
@@ -92,7 +92,7 @@ per_base_quality_df <- data.frame("SampleName" = character(0), "Range" = charact
 for (i in 1:length(sample_files)) {
   current_file <- sample_files[i]
   print(current_file)
-  sample_name <- strsplit(current_file,"_")[[1]][1]
+  sample_name <- strsplit(current_file,".")[[1]][1]
   file_content = readLines(paste(fastqc_output, current_file, sep="/"))
   for (i in 1:length(file_content)) {
     if (grepl(">>Per base sequence quality", file_content[i])) {
@@ -119,10 +119,10 @@ for (i in 1:length(sample_files)) {
 
 # Write raw data
 write.csv(per_base_quality_df, paste(drive_id, "base-quality.csv", sep="."))
-write.csv(sample_df, paste(drive_id, "fastqc-results", sep="."))
+write.csv(sample_df, paste(drive_id, "fastqc-results.csv", sep="."))
 
 # Create plots
-plot_theme = theme_minimal(base_size = 24, base_family = "Helvetica") + 
+plot_theme = theme_minimal(base_size = 20, base_family = "Helvetica") + 
   theme(axis.line = element_line(colour = "black"),
         panel.grid = element_blank())
 
@@ -177,8 +177,11 @@ ggsave(paste(drive_id, "sequence-length.png", sep="."))
 ggplot(per_base_quality_df) +
   geom_point(aes(Range, Mean, color=SampleName), alpha = 0.4, size = 3) +
   geom_point(data = reference_base_quality, aes(Range, Mean), size = 4) +
+  ggtitle("Per base sequence quality") +
+  xlab("Position in read (bp)") +
+  ylab("Quality score") +
   plot_theme + 
-  theme(axis.text.x = element_text(angle = 90, hjust = 1),
+  theme(axis.text.x = element_text(angle = 90, hjust = 1, size=10),
         legend.position="none")
 
 ggsave(paste(drive_id, "base-quality-all.png", sep="."))
