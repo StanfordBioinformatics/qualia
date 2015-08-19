@@ -59,8 +59,7 @@ print(paste("FastQC Directory: ", fastqc_output, sep=""))
 
 ## Start script
 require(ggplot2)
-setwd("~/src/qualia/bin")
-source("./fastqc_helper.R")
+source("~/src/qualia/data/fastqc_helper.R")
 
 # Build reference
 reference_filename = '~/src/qualia/data/IonTorrent_NA12878_V3.fastqc_data.txt'
