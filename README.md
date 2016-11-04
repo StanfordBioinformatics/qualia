@@ -56,5 +56,5 @@ ln -s SHIP*_fastqc/SHIP*.fastqc_data.txt reports
 
 ## Run fastqc analysis script
 ```
-Rscript ~/src/qualia/bin/fastqc_analysis.R --drive_id='CLA00127' --path='/srv/gsfs0/projects/mvp/Claritas_ion_torrent_exomes/data/fastqc/CLA00127/reports'
+Rscript ~/src/qualia/bin/fastqc_analysis.R --drive_id='CLA00127' --path='fastqc/CLA00127/reports'
 ```
